@@ -95,27 +95,6 @@ class MainController extends AbstractController
         return $this->redirectToRoute('main');
         
     }
-    /**
-     * @Route("/compare-rows", name="compare_rows")
-     */
-    public function compareRows(RobotRepository $repository): Response
-    {
-        $row1 = $repository->find(1);
-        $row2 = $repository->find(2);
-
-        if (!$row1 || !$row2) {
-            throw $this->createNotFoundException('Rows not found');
-        }
-
-        if ($row1->getStrenght() === $row2->getStrenght()) {
-            $message = 'The two rows have the same property';
-        } else {
-            $message = 'The two rows have different properties';
-        }
-
-        return new Response($message);
-    }
-
-   
+    
     
 }
