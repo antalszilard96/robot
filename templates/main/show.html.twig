@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h1>Robot name: {{robot.name}}</h1>
+    <p>Type: {{robot.type}}</p>
+    <p>Strenght: {{robot.strenght}}</p>
+    <p>Created: {{robot.created_at | date('d-m-Y')}}</p>
+    <a class="btn btn-dark" href="{{ path('main')}}">Back</a>
+</div>
+
+
+{% endblock %}
